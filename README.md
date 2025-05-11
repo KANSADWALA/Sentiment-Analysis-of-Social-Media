@@ -1,7 +1,9 @@
-# Sentiment-Analysis-of-Social-Media
+# 📱 Sentiment-Analysis-of-Social-Media
 
 ## 📋 Overview
-A comprehensive desktop application for collecting, analyzing, and visualizing social media data from X(Twitter) and Instagram platforms. This application helps users collect social media data, analyze sentiment, process text, detect trends, and create beautiful visualizations. The tool provides valuable insights for marketers, researchers, and social media analysts.
+A comprehensive desktop application for collecting, analyzing, and visualizing social media data from X(Twitter) and Instagram platforms. 
+
+This application helps users collect social media data, analyze sentiment, process text, detect trends, and create beautiful visualizations. The tool provides valuable insights for marketers, researchers, and social media analysts.
 
 ## 🌟 Features
 
@@ -20,7 +22,7 @@ A comprehensive desktop application for collecting, analyzing, and visualizing s
 
 ## 🛠️ Technology Stack
 
-### Frontend (User Interface)
+### 💻 Frontend (User Interface)
 
 <ul>
 <li><strong>HTML/CSS: </strong>For building the structure and styling of the application UI (tabs, panels, buttons).</li>
