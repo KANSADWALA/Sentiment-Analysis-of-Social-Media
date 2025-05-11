@@ -73,15 +73,3 @@ This application helps users collect social media data, analyze sentiment, proce
 </ul>
 
 
-
-
-
-
-<ul><li><strong></strong></li></ul>
-<ul><li><strong></strong></li></ul>
-<ul><li><strong></strong></li></ul>
-<ul><li><strong></strong></li></ul>
-<ul><li><strong></strong></li></ul>
-<ul><li><strong></strong></li></ul>
-
-
