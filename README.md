@@ -1,4 +1,4 @@
-# 📱 Sentiment-Analysis-of-Social-Media
+# 📱 Sentiment Analysis of Social Media
 
 ## 📋 Overview
 A comprehensive desktop application for collecting, analyzing, and visualizing social media data from X(Twitter) and Instagram platforms. 
