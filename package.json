@@ -1,0 +1,32 @@
+{
+    "name": "social-media-sentiment-analyzer",
+    "version": "1.0.0",
+    "description": "Analyze sentiment from social media platforms",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-builder"
+    },
+    "keywords": [
+        "sentiment",
+        "analysis",
+        "social-media",
+        "electron"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^29.4.6",
+        "electron-builder": "^24.9.1"
+    },
+    "dependencies": {
+        "chart.js": "^4.4.9",
+        "electron": "^35.2.1",
+        "electron-squirrel-startup": "^1.0.1",
+        "electron-store": "^10.0.1",
+        "jspdf": "^2.5.1",
+        "natural": "^6.10.4",
+        "xlsx": "^0.18.5"
+    },
+    "type": "module"
+}
