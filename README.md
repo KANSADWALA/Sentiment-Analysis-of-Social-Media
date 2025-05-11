@@ -10,7 +10,7 @@ This application helps users collect social media data, analyze sentiment, proce
 <ul>
   <li><strong>Multi-platform Social Media Data Collection: </strong>Gather posts from X(Twitter), Instagram using APIs and JSON data through Web-Scraping(APIFY)</li>
   <li><strong>Text Processing & Cleaning: </strong>Remove noise, extract hashtags, and normalize social media text.</li>
-  <li><strong>Advanced Sentiment Analysis: </strong>Using both RoBERTa transformer models and Grok API.</li>
+  <li><strong>Advanced Sentiment Analysis: </strong>Using RoBERTa transformer models.</li>
   <li><strong>Trend Analysis: </strong>Track hashtag popularity, sentiment distribution, and engagement metrics.</li>
   <li><strong>Dynamic Visualizations: </strong>Sentiment Charts & Hashtag Charts using Chart.js.
       <ul>
