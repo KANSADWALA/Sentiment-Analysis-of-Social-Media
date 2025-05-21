@@ -5,7 +5,7 @@ A comprehensive desktop application for collecting, analyzing, and visualizing s
 
 This application helps users collect social media data, analyze sentiment, process text, detect trends, and create beautiful visualizations. The tool provides valuable insights for marketers, researchers, and social media analysts.
 
-## Report & Research paper
+## 📝 Report & Research paper
 
 <ol>
 <li><a href="https://drive.google.com/file/d/1bd0Dn47DzX5muSoovDZhfCBq1Unc7IUp/view?usp=sharing">Project_Report (Black Book)</a></li>
