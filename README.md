@@ -14,7 +14,7 @@ This application helps users collect social media data, analyze sentiment, proce
 <ul>
 <Li><strong>Authors:</strong> Shubham Kansadwala, Raj Solanki, Nairutya Taklikar, Romish Yadav, Prof. Swati Uparkar</Li>
 <Li><strong>Publication:</strong> International Journal of Scientific Research & Engineering Development 
-[IJSRED Volume-8  S.No.422]</Li>
+[IJSRED__Volume-8__S.No.422]</Li>
 </ul>
 </ol>
 
