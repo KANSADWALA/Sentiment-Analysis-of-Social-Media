@@ -31,7 +31,7 @@ This application helps users collect social media data, analyze sentiment, proce
 ## 🏆 Achievement & Certification
 
 <ul>
-<li>Secured <a href="https://drive.google.com/file/d/1gYlOzQzmTQX_5tiz3SPJZLknrJ9MVplf/view">2<sup>nd</sup> Runner-up</a> in B.Tech Final Year Project Exhibition.</li>
+<li>Secured <a href="https://drive.google.com/file/d/1gYlOzQzmTQX_5tiz3SPJZLknrJ9MVplf/view">2<sup>nd</sup> Runner-up</a> in B.Tech Final Year Project Exhibition Competition.</li>
 <li>Received <a href="https://drive.google.com/file/d/1ubRFgDDfCkpMw8GmjJfY9KusFjHraqjW/view">Certificate of Appreciation</a> from AICTE IDEA Lab.</li>
 </ul>
 
