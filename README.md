@@ -73,6 +73,8 @@ This application helps users collect social media data, analyze sentiment, proce
 
 <li><strong>Flask-CORS: </strong>To allow communication between the Electron frontend and Flask backend.</li>
 
+<li><strong>MySQL: </strong>Storing the results of analyzed data, which is further used for visualization</li>
+
 </ul>
 
 ### 🔬 Data Collection & Analysis
