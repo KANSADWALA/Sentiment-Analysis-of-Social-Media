@@ -14,6 +14,7 @@ This application helps users collect social media data, analyze sentiment, proce
 <Li><strong>Publication:</strong> International Journal of Scientific Research & Engineering Development 
 [IJSRED__Volume-8__S.No.422]</Li>
 </ul>
+</ul>
 
 <!--<ol>
 <li><a href="https://drive.google.com/file/d/1bd0Dn47DzX5muSoovDZhfCBq1Unc7IUp/view?usp=sharing">Project_Report (Black Book)</a></li>
