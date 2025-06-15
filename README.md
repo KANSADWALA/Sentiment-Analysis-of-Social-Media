@@ -5,9 +5,17 @@ A comprehensive desktop application for collecting, analyzing, and visualizing s
 
 This application helps users collect social media data, analyze sentiment, process text, detect trends, and create beautiful visualizations. The tool provides valuable insights for marketers, researchers, and social media analysts.
 
-## 📝 Report & Research paper
+## 📝 Research paper
 
-<ol>
+<ul>
+<li><a href="https://drive.google.com/file/d/11CeS6iAjR17O_SKafywrk13qGHYopw_3/view?usp=sharing">Research_Paper</a></li>
+<ul>
+<Li><strong>Authors:</strong> Shubham Kansadwala, Raj Solanki, Nairutya Taklikar, Romish Yadav, Prof. Swati Uparkar</Li>
+<Li><strong>Publication:</strong> International Journal of Scientific Research & Engineering Development 
+[IJSRED__Volume-8__S.No.422]</Li>
+</ul>
+
+<!--<ol>
 <li><a href="https://drive.google.com/file/d/1bd0Dn47DzX5muSoovDZhfCBq1Unc7IUp/view?usp=sharing">Project_Report (Black Book)</a></li>
 
 <li><a href="https://drive.google.com/file/d/11CeS6iAjR17O_SKafywrk13qGHYopw_3/view?usp=sharing">Research_Paper</a></li>
@@ -16,13 +24,13 @@ This application helps users collect social media data, analyze sentiment, proce
 <Li><strong>Publication:</strong> International Journal of Scientific Research & Engineering Development 
 [IJSRED__Volume-8__S.No.422]</Li>
 </ul>
-</ol>
+</ol>-->
 
 
 ## 🏆 Achievement & Certification
 
 <ul>
-<li>Secured <a href="https://drive.google.com/file/d/1gYlOzQzmTQX_5tiz3SPJZLknrJ9MVplf/view"><strong>2<sup>nd</sup></strong> Runner-up</a> in B.Tech Final Year Project Exhibition.</li>
+<li>Secured <a href="https://drive.google.com/file/d/1gYlOzQzmTQX_5tiz3SPJZLknrJ9MVplf/view">2<sup>nd</sup> Runner-up</a> in B.Tech Final Year Project Exhibition.</li>
 <li>Received <a href="https://drive.google.com/file/d/1ubRFgDDfCkpMw8GmjJfY9KusFjHraqjW/view">Certificate of Appreciation</a> from AICTE IDEA Lab.</li>
 </ul>
 
