@@ -44,7 +44,7 @@ This application helps users collect social media data, analyze sentiment, proce
   <li><strong>Trend Analysis: </strong>Track hashtag popularity, sentiment distribution, and engagement metrics.</li>
   <li><strong>Dynamic Visualizations: </strong>Sentiment Charts & Hashtag Charts using Chart.js.
       <ul>
-      <li>In Future: Integration with Power BI for professional, interactive dashboards.</li>
+      <li>Integration with Power BI for professional, interactive dashboards.</li>
       </ul>
 </li>
   <li><strong>Desktop Application: </strong>Works on Windows.</li>
