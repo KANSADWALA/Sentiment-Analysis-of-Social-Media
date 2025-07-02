@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ✅ CSP updated to allow external FontAwesome and Chart.js -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'"> -->
+    <title>Social Media Sentiment Analyzer</title>
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+     <!-- Your custom styles -->
+     <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1><i class="fas fa-chart-bar"></i> Social Media Sentiment Analyzer</h1>
+        </header>
+        
+        <div class="tab-container">
+            <div class="tab-header">
+                <div class="tab active" data-tab="collection">
+                    <i class="fas fa-cloud-download-alt"></i> Data Collection
+                </div>
+                <div class="tab" data-tab="analysis">
+                    <i class="fas fa-chart-line"></i> Analysis
+                </div>
+                <div class="tab" data-tab="visualization">
+                    <i class="fas fa-chart-pie"></i> Visualization
+                </div>
+                <!-- <div class="tab" data-tab="dashboard">
+                    <i class="fas fa-chart-area"></i> Dashboard
+                </div> -->
+                <div class="tab" data-tab="log">
+                    <i class="fas fa-clipboard-list"></i> Log
+                </div>
+            </div>
+            
+            <div class="tab-content">
+                <!-- Data Collection Tab -->
+                <div class="tab-pane active" id="collection">
+                    <div class="panel-container">
+                        <!-- Twitter API Settings -->
+                        <div class="panel">
+                            <h2><i class="fab fa-twitter"></i> Twitter API Settings</h2>
+                            <div class="form-group">
+                                <label for="twitter-bearer-token">
+                                    Bearer Token
+                                    <span class="help-icon" data-tooltip="Twitter Bearer Token from your developer account">?</span>
+                                </label>
+                                <input type="password" id="twitter-bearer-token" placeholder="Enter bearer token">
+                            </div>
+                            <button class="btn btn-primary" id="btn-twitter-connect">
+                                <i class="fas fa-plug"></i> Connect to Twitter API
+                            </button>
+                        </div>
+                        
+                        <!-- Instagram API Settings -->
+                        <div class="panel">
+                            <h2><i class="fab fa-instagram"></i> Instagram API Settings</h2>
+                            <div class="form-group">
+                                <label for="instagram-session-id">
+                                    Session ID
+                                    <span class="help-icon" data-tooltip="Instagram session ID cookie value">?</span>
+                                </label>
+                                <input type="password" id="instagram-session-id" placeholder="Enter session ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="instagram-ds-user-id">
+                                    DS User ID
+                                    <span class="help-icon" data-tooltip="Instagram ds_user_id cookie value">?</span>
+                                </label>
+                                <input type="password" id="instagram-ds-user-id" placeholder="Enter DS User ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="instagram-csrf-token">
+                                    CSRF Token
+                                    <span class="help-icon" data-tooltip="Instagram csrftoken cookie value">?</span>
+                                </label>
+                                <input type="password" id="instagram-csrf-token" placeholder="Enter CSRF token">
+                            </div>
+                            <button class="btn btn-primary" id="btn-instagram-connect">
+                                <i class="fas fa-plug"></i> Connect to Instagram API
+                            </button>
+                        </div>
+                        
+                        <!-- Twitter Data Collection -->
+                        <div class="panel">
+                            <h2><i class="fab fa-twitter"></i> Twitter Data Collection</h2>
+                            <div class="form-group">
+                                <label for="twitter-search-type">Search By</label>
+                                <select id="twitter-search-type">
+                                    <option value="hashtag">Hashtag</option>
+                                    <option value="username">Username</option>
+                                    <!-- <option value="keyword">Keyword</option> -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="twitter-search-term">
+                                    Search Term
+                                    <span class="help-icon" data-tooltip="Enter hashtag without the # symbol, or username without the @ symbol">?</span>
+                                </label>
+                                <input type="text" id="twitter-search-term" placeholder="Enter search term">
+                            </div>
+                            <div class="form-group">
+                                <label for="twitter-max-tweets">
+                                    Maximum Tweets
+                                    <span class="help-icon" data-tooltip="Maximum number of tweets to fetch (higher values may take longer)">?</span>
+                                </label>
+                                <input type="number" id="twitter-max-tweets" value="100" min="10" max="1000">
+                            </div>
+                            <button class="btn btn-primary" id="btn-twitter-fetch">
+                                <i class="fas fa-search"></i> Fetch Twitter Data
+                            </button>
+                        </div>
+                        
+                        <!-- Instagram Data Collection -->
+                        <div class="panel">
+                            <h2><i class="fab fa-instagram"></i> Instagram Data Collection</h2>
+                            <div class="form-group">
+                                <label for="instagram-search-type">Search By</label>
+                                <select id="instagram-search-type">
+                                    <option value="hashtag">Hashtag</option>
+                                    <option value="post">Post URL</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="instagram-search-term">
+                                    Search Term
+                                    <span class="help-icon" data-tooltip="Enter hashtag without the # symbol, or full post URL">?</span>
+                                </label>
+                                <input type="text" id="instagram-search-term" placeholder="Enter search term">
+                            </div>
+                            <div class="form-group">
+                                <label for="instagram-max-posts">
+                                    Maximum Posts
+                                    <span class="help-icon" data-tooltip="Maximum number of posts to fetch (higher values may take longer)">?</span>
+                                </label>
+                                <input type="number" id="instagram-max-posts" value="50" min="10" max="500">
+                            </div>
+                            <button class="btn btn-primary" id="btn-instagram-fetch">
+                                <i class="fas fa-search"></i> Fetch Instagram Data
+                            </button>
+                        </div>
+                        
+                        <!-- Data Actions -->
+                        <div class="panel">
+                            <h2><i class="fas fa-database"></i> Data Actions</h2>
+                            <div class="data-actions">
+                                <button class="btn btn-secondary" id="btn-export-raw-data">
+                                    <i class="fas fa-file-export"></i> Export Raw Data
+                                </button>
+                                <button class="btn btn-secondary" id="btn-import-data">
+                                    <i class="fas fa-file-import"></i> Import Data
+                                </button>
+                                <button class="btn btn-warning" id="btn-clear-data">
+                                    <i class="fas fa-trash-alt"></i> Clear Data
+                                </button>
+                            </div>
+                            <div class="data-stats">
+                                <div class="stat">
+                                    <i class="fab fa-twitter"></i> Twitter: <span id="twitter-count">0</span> items
+                                </div>
+                                <div class="stat">
+                                    <i class="fab fa-instagram"></i> Instagram: <span id="instagram-count">0</span> items
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-database"></i> Total: <span id="total-count">0</span> items
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Analysis Tab -->
+                <div class="tab-pane" id="analysis">
+                    <div class="panel-container">
+                        <!-- Analysis Settings -->
+                        <div class="panel">
+                            <h2><i class="fas fa-sliders-h"></i> Analysis Settings</h2>
+                            <div class="form-group">
+                                <label for="analysis-method">Sentiment Analysis Method</label>
+                                <select id="analysis-method">
+                                    <!-- <option value="basic">Basic (Rule-based)</option> -->
+                                    <option value="nlp" selected>Natural Language Processing</option>
+                                    <!-- <option value="advanced">Advanced (ML-based)</option> -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select id="language">
+                                    <option value="en" selected>English</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-primary" id="btn-run-analysis">
+                                <i class="fas fa-play"></i> Run Analysis
+                            </button>
+                        </div>
+
+                        <!-- Progress Container -->
+                        <div id="analysis-progress-container" style="margin-top: 10px; display: none;">
+                            <div id="analysis-progress-text" style="font-size: 14px; margin-bottom: 4px;">Analyzing...</div>
+                            <div style="background: #e0e0e0; border-radius: 8px; overflow: hidden;">
+                            <div id="analysis-progress-bar"
+                                style="height: 8px; width: 0%; background: #007bff; transition: width 0.3s;">
+                            </div>
+                            </div>
+                        </div>
+                       
+                        <!-- Analysis Summary -->
+                        <div class="panel analysis-summary-panel">
+                            <h2><i class="fas fa-chart-line"></i> Analysis Summary</h2>
+                            <div class="analysis-summary-content" id="analysis-summary">
+                                <p class="placeholder-text">No analysis data available. Click "Run Analysis" to generate results.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Export Options -->
+                        <div class="panel">
+                            <h2><i class="fas fa-file-export"></i> Export Options</h2>
+                            <div class="export-actions">
+                                <button class="btn btn-secondary" id="btn-export-pdf">
+                                    <i class="fas fa-file-pdf"></i> Export as PDF
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Visualization Tab -->
+                <div class="tab-pane" id="visualization">
+                    <div class="panel-container">
+                        <!-- Visualization Controls -->
+                        <div class="panel">
+                            <h2><i class="fas fa-chart-pie"></i> Visualization Controls</h2>
+                            <div class="visualization-actions">
+                                <button class="btn btn-primary" id="btn-refresh-viz">
+                                    <i class="fas fa-sync-alt"></i> Refresh Visualizations
+                                </button>
+                                <button class="btn btn-secondary" id="btn-export-images">
+                                    <i class="fas fa-images"></i> Export All Images
+                                </button>
+                                <button class="btn btn-secondary" id="btn-generate-report">
+                                    <i class="fas fa-file-alt"></i> Generate PDF Report
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Visualization Tabs -->
+                        <div class="visualization-tabs">
+                            <div class="viz-tab-header">
+                                <div class="viz-tab active" data-viz-tab="sentiment">
+                                    <i class="fas fa-smile"></i> Sentiment Analysis
+                                </div>
+                                <div class="viz-tab" data-viz-tab="hashtags">
+                                    <i class="fas fa-hashtag"></i> Hashtag Analysis
+                                </div>
+                                <div class="viz-tab" data-viz-tab="platforms">
+                                    <i class="fas fa-share-alt"></i> Platform Distribution
+                                </div>
+                            </div>
+                            
+                            <div class="viz-tab-content">
+                                <!-- Sentiment Tab -->
+                                <div class="viz-tab-pane active" id="sentiment-viz">
+                                    <div class="chart-container">
+                                        <canvas id="sentiment-chart"></canvas>
+                                        <p class="placeholder-text">No sentiment data available. Run an analysis first.</p>
+                                    </div>
+                                    <div class="chart-info">
+                                        <h3>Sentiment Distribution</h3>
+                                        <p>This chart shows the distribution of positive, neutral, and negative sentiment across all analyzed content.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Hashtags Tab -->
+                                <div class="viz-tab-pane" id="hashtags-viz">
+                                    <div class="chart-container">
+                                        <canvas id="hashtag-chart"></canvas>
+                                        <p class="placeholder-text">No hashtag data available. Run an analysis first.</p>
+                                    </div>
+                                    <div class="chart-info">
+                                        <h3>Top Hashtags</h3>
+                                        <p>This chart shows the most frequently used hashtags and their associated sentiment.</p>
+                                    </div>
+                                </div>
+                                
+                                <!-- Platforms Tab -->
+                                <div class="viz-tab-pane" id="platforms-viz">
+                                    <div class="chart-container">
+                                        <canvas id="platform-chart"></canvas>
+                                        <p class="placeholder-text">No platform data available. Run an analysis first.</p>
+                                    </div>
+                                    <div class="chart-info">
+                                        <h3>Platform Distribution</h3>
+                                        <p>This chart shows the distribution of data sources between Twitter and Instagram.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Log Tab -->
+                <div class="tab-pane" id="log">
+                    <div class="panel-container">
+                        <!-- Log Controls -->
+                        <div class="panel log-controls">
+                            <div class="log-actions">
+                                <div class="form-group">
+                                    <label for="log-filter">Filter:</label>
+                                    <select id="log-filter">
+                                        <option value="all" selected>All</option>
+                                        <option value="info">Info</option>
+                                        <option value="warning">Warning</option>
+                                        <option value="error">Error</option>
+                                    </select>
+                                </div>
+                                <div class="form-group search-group">
+                                    <label for="log-search">Search:</label>
+                                    <input type="text" id="log-search" placeholder="Search logs...">
+                                    <button class="btn btn-sm" id="btn-search-log">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <button class="btn btn-secondary" id="btn-export-log">
+                                    <i class="fas fa-file-export"></i> Export Log
+                                </button>
+                                <button class="btn btn-warning" id="btn-clear-log">
+                                    <i class="fas fa-trash-alt"></i> Clear Log
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Log Content -->
+                        <div class="panel log-panel">
+                            <div class="log-content" id="log-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div id="status-message" class="status-message">Ready</div>
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast for notifications -->
+    <div class="toast-container" id="toast-container"></div>
+    
+    <!-- Help Modal -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Help</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <p>Help text will appear here.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hidden file input for data import -->
+    <input type="file" id="file-import" accept=".json" style="display: none;">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="./render.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+</body>
+</html>
